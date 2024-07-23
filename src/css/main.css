@@ -719,7 +719,7 @@ body.lock {
 }
 
 .modal__img {
-  width: 60%;
+  width: 100%;
   margin: 1.25rem auto;
 }
 

@@ -26,7 +26,7 @@ const imageBase = baseUrl ?? landingUrl;
     newPrice: "",
     selectText: "",
     coupon: "",
-    timer: "Vous ne pouvez commander qu'un seul paquet au prix promotionnel cette semaine.",
+    timer: "Cette semaine, vous ne pouvez commander qu'un seul produit à un prix promotionnel.",
     text: `
   Félicitations !<br><br>
   Vous avez participé à la promotion Stanley : vous avez la chance d'acheter le thermos STANLEY QUENCHER H2.0 avec moule à glace pour seulement <b>37$</b> !
@@ -50,39 +50,39 @@ const imageBase = baseUrl ?? landingUrl;
 
   const reviewsArr = [
     {
-      name: "Matthieu",
+      name: "Marie Dupont:",
       time: "Il y a un jour",
       header: "C'est incroyable !",
       product: "26468781",
-      review: "En tant que fan de football depuis de nombreuses années, j'ai été très surpris par la qualité du maillot de l'équipe nationale de France à un prix aussi raisonnable 😊",
+      review: "J'adore CinéPass! Grâce à mon abonnement, je peux aller au cinéma autant de fois que je le souhaite sans me soucier du prix. C'est parfait pour les cinéphiles comme moi!",
     },
     {
-      name: "Luc",
+      name: "Thomas Martin:",
       time: "Il y a deux jours",
       header: "Fantastique ! Je n'ai pas de mots.",
       product: "26468783",
-      review: "J'ai décidé d'acheter le sac à dos de l'équipe nationale de France pour la première fois et maintenant je l'apprécie à chaque fois que je soutiens mon équipe, merci.",
+      review: "Le meilleur investissement de l'année! CinéPass me permet de découvrir tous les nouveaux films dès leur sortie. Le processus de commande était simple et rapide. Je le recommande vivement.",
     },
     {
-      name: "Valentine",
+      name: "Sophie Bernard:",
       time: "Il y a deux jours",
       header: "Simplement génial.",
       product: "26468784",
-      review: "La qualité de cette casquette est incroyable, et la taille est parfaite ! Merci, je la recommanderai à mes amis.",
+      review: "Je suis vraiment satisfaite de mon abonnement CinéPass. La variété des films et la qualité des salles de cinéma sont incroyables. C'est une excellente idée cadeau aussi!",
     },
     {
-      name: "Jacques",
+      name: "Julien Lefèvre:",
       time: "Il y a quatre jours",
       header: "J'aime",
       product: "26468781",
-      review: "Honnêtement, j'adore regarder le football, et le nouveau maillot de l'équipe nationale de France était exactement ce dont j'avais besoin.",
+      review: "En tant que grand amateur de cinéma, CinéPass a révolutionné ma façon de profiter des films. L'accès illimité et les cinémas partenaires rendent l'expérience encore plus agréable. Je suis ravi!",
     },
     {
-      name: "Martine",
+      name: "Camille Dubois:",
       time: "Il y a sept jours",
       header: "Wow, j'adore ce produit !",
       product: "26468782",
-      review: "Au début, je pensais que la tasse serait chère, mais heureusement je l'ai achetée et maintenant je profite des meilleurs matchs avec elle. Merci !",
+      review: "CinéPass m'a permis de redécouvrir le plaisir d'aller au cinéma. Les films sont variés, les cinémas confortables, et le prix de l'abonnement est très raisonnable. Je ne pourrais plus m'en passer!",
     },
   ];
 
@@ -160,7 +160,7 @@ const imageBase = baseUrl ?? landingUrl;
     Cliquez sur le bouton « Passer la commande », remplissez le formulaire et payez la commande.
     <br>
     <br>
-    Dans un délai de 3 à 5 jours, vous recevrez un email avec votre abonnement et les instructions.
+    Dans 3 à 5 jours, vous recevrez un colis à votre adresse avec une carte d'abonnement et des instructions.
 </center>
             `,
       },
