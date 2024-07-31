@@ -280,7 +280,63 @@ const imageBase = baseUrl ?? landingUrl;
   };
 })(window);
 
+const siteKey = "cinepass-fr";
+
+function setCookie(name, value, days = 2) {
+  const expires = new Date(Date.now() + days * 864e5).toUTCString();
+  document.cookie = `${siteKey + name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+}
+
+function getCookie(name) {
+  var dc = document.cookie;
+  var prefix = (siteKey + name) + "=";
+  var begin = dc.indexOf("; " + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  }
+  else {
+    begin += 2;
+    var end = document.cookie.indexOf(";", begin);
+    if (end == -1) {
+      end = dc.length;
+    }
+  }
+  return decodeURI(dc.substring(begin + prefix.length, end));
+}
+
+const clearAllCookies = () => document.cookie.split(';').forEach(c => document.cookie = c.replace(/^ +/, '').replace(/=.*/, `=;expires=${new Date().toUTCString()};path=/`));
+
+const clearSiteSpecificCookies = () => {
+  document.cookie.split(';').forEach(cookie => {
+    // Trim any leading spaces from the cookie string
+    const trimmedCookie = cookie.trim();
+
+    // Extract the cookie name
+    const cookieName = trimmedCookie.split('=')[0];
+
+    // Check if the cookie name starts with the siteKey
+    if (cookieName.startsWith(siteKey)) {
+      // Set the cookie's expiration to a past date to delete it
+      document.cookie = `${cookieName}=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/`;
+    }
+  });
+};
+
+
+const starupCheck = () => {
+  if (getCookie("__firstStart") != null) {
+    return;
+  } else {
+    localStorage.clear();
+    clearSiteSpecificCookies();
+    setCookie("__firstStart", true);
+  }
+};
+
+
 window.addEventListener("load", () => {
+  starupCheck();
   for (let path of Object.values(window.__config.pathImgBox)) {
     let link = document.createElement("link");
     link.setAttribute("as", "image");
@@ -291,10 +347,10 @@ window.addEventListener("load", () => {
 });
 
 const lsSelectProduct = (val) =>
-  localStorage.setItem("__selected_product", val);
+  setCookie("__selected_product", val);
 const lsGetSelectedProduct = () => {
   const products = window.__config.products;
-  let ind = localStorage.getItem("__selected_product");
+  let ind = getCookie("__selected_product");
 
 
   ///
@@ -318,9 +374,9 @@ const lsGetSelectedProductInd = () => {
   return lsGetSelectedProduct().id;
 };
 
-const lsSelectSize = (val) => localStorage.setItem("__selected_size", val);
+const lsSelectSize = (val) => setCookie("__selected_size", val);
 const lsGetSelectedSizeInd = () => {
-  const ind = localStorage.getItem("__selected_size");
+  const ind = getCookie("__selected_size");
   let v = parseInt(ind);
 
   if (isNaN(v)) {
@@ -340,9 +396,9 @@ const lsGetProductImages = () => {
   return lsGetSelectedProduct()?.images ?? [];
 };
 
-const lsSetStep = (val) => localStorage.setItem("__step", val);
+const lsSetStep = (val) => setCookie("__step", val);
 const lsGetStep = () => {
-  const step = localStorage.getItem("__step", val);
+  const step = getCookie("__step", val);
 
   console.log(step);
 

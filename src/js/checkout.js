@@ -2,7 +2,7 @@ const { countryCode, cart } = window.__config;
 const cfg = window.__config;
 
 const checkoutInit = () => {
-  localStorage.setItem("__is_checkout", "true");
+  setCookie("__is_checkout", "true");
   var input = document.querySelector("#phoneField");
 
   IMask(input, {
@@ -84,11 +84,11 @@ const checkoutInit = () => {
     checkoutOfferSize.remove();
   }
 
-  // if (localStorage.getItem("__selected_product") === "26468782") {
+  // if (getCookie("__selected_product") === "26468782") {
   //   cart.main.oldPrice = "€95.00";
-  // } else if (localStorage.getItem("__selected_product") === "26468783") {
+  // } else if (getCookie("__selected_product") === "26468783") {
   //   cart.main.oldPrice = "€95.00";
-  // } else if (localStorage.getItem("__selected_product") === "26468784") {
+  // } else if (getCookie("__selected_product") === "26468784") {
   //   cart.main.oldPrice = "€95.00";
   // }
 
