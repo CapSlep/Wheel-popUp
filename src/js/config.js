@@ -37,13 +37,13 @@ const imageBase = baseUrl ?? landingUrl;
     {
       user: "Manuel S*****",
       location: "Warszawa, Polska",
-      action: "Właśnie otrzymałem biżuterię za 9,99 zł!",
+      action: "Właśnie otrzymałem biżuterię za 43,99 zł!",
       timeago: "15 sekund temu",
     },
     {
       user: "Carlos B******",
       location: "Kraków, Polska",
-      action: "Właśnie otrzymałem biżuterię za 9,99 zł!",
+      action: "Właśnie otrzymałem biżuterię za 43,99 zł!",
       timeago: "25 sekund temu",
     },
   ];
