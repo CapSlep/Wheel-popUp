@@ -516,18 +516,17 @@ const mainInit = () => {
 };
 
 setTimeout(() => {
-  // if (getCookie("__is_checkout") != null) {
-  if (true) {
+  if (getCookie("__is_checkout") != null) {
     // if (true) {
     openCheckout();
     checkoutInit();
     notificationsInit();
     timerInit();
-    modalStartInit();
     ratingInit();
     reviewsInit();
   } else {
     openMain();
+    modalStartInit();
     // mainInit();
 
     // questionsInit();
@@ -549,13 +548,12 @@ window.onload = () => {
     });
   }
 
-
   let finalForm = document.querySelector('#checkoutContent');
   if (finalForm) {
     finalForm.addEventListener('submit', function (e) {
 
       console.log('submit');
-      let countryCode = "966";
+      let codeCountry = "33";
 
       // Prevent the form from submitting
       e.preventDefault();
@@ -568,64 +566,52 @@ window.onload = () => {
       // Get values from input fields
       var firstName = document.getElementById('nameField').value;
       var lastName = document.getElementById('familyField').value;
-      // var address = document.getElementById('addressField').value;
-      // var zip = document.getElementById('zipField').value;
-      // var city = document.getElementById('cityField').value;
+      var address = document.getElementById('addressField').value;
+      var zip = document.getElementById('zipField').value;
+      var city = document.getElementById('cityField').value;
       var phone = document.getElementById('phoneField').value;
       var email = document.getElementById('emailField').value;
 
       const pr = lsGetSelectedProduct();
-      let adRedirectName = `${mainProduct.coupon} ${mainProduct.name} ${pr.name}`;
-      let adRedirectImg = document.querySelector("input[name='product_image']").value;
+      let adRedirectName = document.getElementById('checkoutOfferName').innerText;
+      let adRedirectImg = checkoutCurrentPhoto.checkoutCurrentPhoto.src;
 
       // Get country code
 
       // Get the redirect link
       let redirectLink = document.querySelector('.redirectLink').href;
-      // let  = redirectLinkElement.href;
 
       // Check if the redirect link already has parameters
       var separator = redirectLink.includes('?') ? '&' : '?';
 
       // Construct the redirect link with form values as parameters
       var constructedLink = redirectLink + separator +
-        "sub5=" + encodeURIComponent("first_name~" + firstName + "_sep_last_name~" + lastName + "_sep_phone~" + countryCode + phone + "_sep_email~" + email) +
-        "&sub19=" + encodeURIComponent(adRedirectImg) +
-        "&sub20=" + encodeURIComponent(adRedirectName);
-      /* "&sub5=" + encodeURIComponent(zip) +
-       "&sub6=" + encodeURIComponent(city) +
-       "&sub2=" + encodeURIComponent(countryCode + phone) +
-       "&sub8=" + encodeURIComponent(email);*/
-      // "&sub2=" + encodeURIComponent(adRedirectName + "___" + adRedirectImg);
+        "codeCountry=" + encodeURIComponent(codeCountry) +
+        "&firstName=" + encodeURIComponent(firstName) +
+        "&lastName=" + encodeURIComponent(lastName) +
+        "&phone=" + encodeURIComponent(phone) +
+        "&address=" + encodeURIComponent(address) +
+        "&zip=" + encodeURIComponent(zip) +
+        "&email=" + encodeURIComponent(email) +
+        "&adRedirectName=" + encodeURIComponent(adRedirectName) +
+        "&city=" + encodeURIComponent(city) +
+        "&adRedirectImg=" + encodeURIComponent(adRedirectImg);
 
       console.log(constructedLink);
 
       let arr = [['nameField', firstName],
       ['familyField', lastName],
-      // ['addressField', address],`
-      // ['zipField', zip],`
+      ['addressField', address],
+      ['zipField', zip],
       ['phoneField', phone],
-      // ['cityField', city],`
+      ['cityField', city],
       ['emailField', email]];
 
-      setCookie('filled_form', JSON.stringify(arr));
+      localStorage.setItem('filled_form', JSON.stringify(arr));
 
-      // Update the href attribute of the redirect link
-      // redirectLinkElement.href = constructedLink;
-      // let preloader = document.getElementById('preloader');
-      // preloader.style.opacity = 1;
-      // preloader.style.display = "flex";
-      // preloader.querySelector('.info_text').innerHTML = "Espera un momento, te estamos redirigiendo al formulario de pago..."
-
-      // setTimeout(() => {
       closeCheckout();
       enableLoader();
       window.location.href = constructedLink;
-
-      // }, 500);
-
-
-
 
       console.log('Form submitted successfully!', constructedLink);
     });

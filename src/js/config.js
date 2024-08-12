@@ -8,17 +8,17 @@ const landingUrl = baseHref + window.location.pathname;
 const imageBase = baseUrl ?? landingUrl;
 
 (function (exp) {
-  const countryCode = "fr";
-  const lang = "fr-FR";
+  const countryCode = "gb";
+  const lang = "en-GB";
   const locale = lang;
 
   const sizes = {
     enabled: false,
-    selectText: "Taille : ",
+    selectText: "Size: ",
     arr: ["XS", "S", "M", "M/L", "L", "L/XL", "XL", "XXL"],
   };
 
-  // JE REMPLIS CES INFORMATIONS DANS MAIN.JS
+  // I FILL THIS INFO IN MAIN.JS
   const mainProduct = {
     header: "",
     name: "",
@@ -26,125 +26,125 @@ const imageBase = baseUrl ?? landingUrl;
     newPrice: "",
     selectText: "",
     coupon: "",
-    timer: "Cette semaine, vous ne pouvez commander qu'un seul produit à un prix promotionnel.",
+    timer: "This week, you can only order one product at a promotional price.",
     text: `
-  Félicitations !<br><br>
-  Vous avez participé à la promotion Stanley : vous avez la chance d'acheter le thermos STANLEY QUENCHER H2.0 avec moule à glace pour seulement <b>37$</b> !
+  Congratulations!<br><br>
+  You have participated in the Stanley promotion: you have the chance to purchase the STANLEY QUENCHER H2.0 thermos with an ice mold for only <b>£37</b>!
   `,
   };
 
   const notifications = [
     {
       user: "Manuel S*****",
-      location: "Paris, France",
-      action: "Je viens de recevoir le bijou pour 9,99 euros !",
-      timeago: "il y a 15 secondes",
+      location: "London, United Kingdom",
+      action: "I just received the jewelry for £9.99!",
+      timeago: "15 seconds ago",
     },
     {
       user: "Carlos B******",
-      location: "Lyon, France",
-      action: "Je viens de recevoir le bijou pour 9,99 euros !",
-      timeago: "il y a 25 secondes",
+      location: "Manchester, United Kingdom",
+      action: "I just received the jewelry for £9.99!",
+      timeago: "25 seconds ago",
     },
   ];
 
   const reviewsArr = [
     {
-      name: "Marie Dupont:",
-      time: "Il y a un jour",
-      header: "C'est incroyable !",
+      name: "Emma J.:",
+      time: "1 day ago",
+      header: "This is amazing!",
       product: "26468781",
-      review: "J'adore CinéPass! Grâce à mon abonnement, je peux aller au cinéma autant de fois que je le souhaite sans me soucier du prix. C'est parfait pour les cinéphiles comme moi!",
+      review: "Unbelievable value! I got the 6-month myLIMITLESS PLUS pass at 90% off. Now I can watch as many films as I want without worrying about the cost!",
     },
     {
-      name: "Thomas Martin:",
-      time: "Il y a deux jours",
-      header: "Fantastique ! Je n'ai pas de mots.",
+      name: "Liam S.:",
+      time: "2 days ago",
+      header: "Fantastic! I'm speechless.",
       product: "26468783",
-      review: "Le meilleur investissement de l'année! CinéPass me permet de découvrir tous les nouveaux films dès leur sortie. Le processus de commande était simple et rapide. Je le recommande vivement.",
+      review: "The 3-month myLIMITLESS deal is amazing. With such a huge discount, it's practically free cinema for the entire summer. Highly recommend!",
     },
     {
-      name: "Sophie Bernard:",
-      time: "Il y a deux jours",
-      header: "Simplement génial.",
+      name: "Chloe R.:",
+      time: "2 days ago",
+      header: "Simply great.",
       product: "26468784",
-      review: "Je suis vraiment satisfaite de mon abonnement CinéPass. La variété des films et la qualité des salles de cinéma sont incroyables. C'est une excellente idée cadeau aussi!",
+      review: "Just grabbed the myLIMITLESS pass for half a year at a fraction of the price. Perfect timing for all the blockbuster releases!",
     },
     {
-      name: "Julien Lefèvre:",
-      time: "Il y a quatre jours",
-      header: "J'aime",
+      name: "Sophia M.:",
+      time: "4 days ago",
+      header: "I love it",
       product: "26468781",
-      review: "En tant que grand amateur de cinéma, CinéPass a révolutionné ma façon de profiter des films. L'accès illimité et les cinémas partenaires rendent l'expérience encore plus agréable. Je suis ravi!",
+      review: "I never thought I'd get such a great deal on the myLIMITLESS PLUS pass. Six months of unlimited movies for just a few quid – incredible!",
     },
     {
-      name: "Camille Dubois:",
-      time: "Il y a sept jours",
-      header: "Wow, j'adore ce produit !",
+      name: "James T.:",
+      time: "7 days ago",
+      header: "Wow, I love this product!",
       product: "26468782",
-      review: "CinéPass m'a permis de redécouvrir le plaisir d'aller au cinéma. Les films sont variés, les cinémas confortables, et le prix de l'abonnement est très raisonnable. Je ne pourrais plus m'en passer!",
+      review: "Best deal ever! 90% off the myLIMITLESS subscription means more movies and more savings. Couldn't be happier with this offer.",
     },
   ];
 
   const reviews = {
     reviews: reviewsArr,
-    rr: "AVIS ET ÉVALUATIONS",
+    rr: "REVIEWS AND RATINGS",
     percent: "99%",
-    rec: "Commentaires sur cette promotion",
+    rec: "Comments on this promotion",
   };
 
   const questions = {
-    _of: "Question {1} sur {2} : ",
+    _of: "Question {1} of {2}: ",
     arr: [
       {
-        q: "Avez-vous déjà commandé des produits McDonald's ?",
+        q: "Have you ever ordered McDonald's products?",
         a: [
-          "Oui, je commande souvent",
-          "Oui, je commande rarement",
-          "Je n'ai jamais commandé",
+          "Yes, I order often",
+          "Yes, I order rarely",
+          "I've never ordered",
         ],
       },
       {
-        q: "McDonald's devrait-il continuer ce type de campagnes publicitaires ?",
-        a: ["Oui, bien sûr !", "Oui, mais changez le menu promotionnel", "Non"],
+        q: "Should McDonald's continue this type of advertising campaigns?",
+        a: ["Yes, absolutely!", "Yes, but change the promotional menu", "No"],
       },
       {
-        q: "Recommanderiez-vous nos produits à vos amis ?",
-        a: ["Oui", "Non"],
+        q: "Would you recommend our products to your friends?",
+        a: ["Yes", "No"],
       },
     ],
   };
 
   const check = {
-    title: "Votre réponse sera examinée",
+    title: "Your answer is being reviewed",
     arr: [
-      "Vous avez répondu à la question 3 sur 3",
-      "Votre adresse IP ne montre aucune commande précédente",
-      "Votre réponse a été vérifiée",
+      "You answered question 3 out of 3",
+      "Your IP address shows no previous orders",
+      "Your answer has been verified",
     ],
   };
 
   const modals = {
     welcome: {
       texts: {
-        header: "Merci d'avoir participé à l'enquête !",
-        button: "Tentez votre chance",
+        header: "Thank you for participating in the survey!",
+        button: "Try your luck",
         text: `
 <center>
-    Pour obtenir le menu promotionnel de McDonald's, vous devez choisir la bonne boîte-cadeau.
+    To receive the McDonald's promotional menu, you need to choose the right gift box.
     <br><br>
-    Vous avez 3 tentatives, bonne chance !
+    You have 3 attempts, good luck!
 </center>
             `,
       },
     },
     first: {
       texts: {
-        header: "Oh, non...",
-        button: "Réessayez",
+        header: "Oh no...",
+        button: "Try again",
         text: `
 <center>
-    Malheureusement, ce cadeau est vide. Il vous reste deux tentatives, bonne chance !
+    Unfortunately, this gift is empty. You have two more attempts, good luck!
 </center>
             `,
       },
@@ -152,15 +152,15 @@ const imageBase = baseUrl ?? landingUrl;
     win: {
       texts: {
         header: "",
-        button: "Passer la commande",
+        button: "Place Order",
         text: `
 <center>
     <p style="color: #ffffff"></p>
     <br>
-    Cliquez sur le bouton « Passer la commande », remplissez le formulaire et payez la commande.
+    Click on the "Place Order" button, fill out the form, and pay for your order.
     <br>
     <br>
-    Dans 3 à 5 jours, vous recevrez un colis à votre adresse avec une carte d'abonnement et des instructions.
+    Within 3–5 days, you will receive a package with your subscription card and instructions.
 </center>
             `,
       },
@@ -169,89 +169,89 @@ const imageBase = baseUrl ?? landingUrl;
 
   const cartSteps = {
     personal: {
-      title: "Informations Personnelles",
+      title: "Personal Information",
       fields: {
         name: {
           enabled: true,
-          field: "Prénom",
+          field: "First Name",
         },
         family: {
           enabled: true,
-          field: "Nom",
+          field: "Last Name",
         },
         phone: {
           enabled: true,
-          field: "Numéro de téléphone",
+          field: "Phone Number",
         },
         email: {
           enabled: true,
-          field: "Adresse e-mail",
+          field: "Email Address",
         },
       },
     },
     delivery: {
-      title: "Livraison",
+      title: "Delivery",
       fields: {
         city: {
           enabled: true,
-          field: "Ville",
+          field: "City",
         },
         address: {
           enabled: true,
-          field: "Adresse de livraison",
+          field: "Delivery Address",
         },
         zip: {
           enabled: true,
-          field: "Code postal",
+          field: "Postal Code",
         },
       },
     },
     payment: {
-      title: "Moyens de Paiement",
-      creditCard: "Paiement en ligne par carte de crédit",
+      title: "Payment Methods",
+      creditCard: "Online payment by credit card",
     },
   };
 
   const cart = {
     steps: cartSteps,
     main: {
-      title: "Détails de la Commande",
-      oldPrice: "37,90€",
-      newPrice: "9,99 €",
-      size: "Taille",
+      title: "Order Details",
+      oldPrice: "£96.00",
+      newPrice: "£9.99",
+      size: "Size",
       subTotal: {
-        title: "Sous-total",
-        amount: "9,99 €",
+        title: "Subtotal",
+        amount: "£9.99",
       },
       deliveryTime: {
-        title: "Délai de livraison",
-        amount: "3 jours",
+        title: "Delivery Time",
+        amount: "3 days",
       },
       delivery: {
-        title: "Livraison",
-        amount: "0,00 €",
+        title: "Delivery",
+        amount: "£0.00",
       },
       total: {
         title: "Total",
-        amount: "9,99 €",
+        amount: "£9.99",
       },
-      checkoutButton: "Payer votre commande",
+      checkoutButton: "Pay your order",
     },
   };
-
 
   const products = [
     {
       id: "26468781",
-      name: "Abonnement CinéPass : Dites oui au cinéma à volonté !",
+      name: "MYLIMITLESS MEMBERSHIP - YOUR TICKET TO INFINITE CINEMA",
       miniImg: "./src/img/price.png",
       images: ["./src/img/price.png"],
     }
   ];
 
   const footer = {
-    cr: "© 2024, UEFA and Fanatics, Inc.. All rights reserved. No portion of this site may be reproduced or duplicated without the express permission of UEFA and/or Fanatics (as applicable). The words UEFA, UEFA Nations League, UEFA Nations League Finals, Finalissima, UEFA U21 Championships, UEFA EURO and UEFA Women’s EURO and all other UEFA marks, names, mascots and trophies are the property, registered trademarks, designs and/or copyright of UEFA. Store maintained and operated by Fanatics (International) Limited.",
+    cr: "© 2024, UEFA and Fanatics, Inc.",
   };
+
 
   const pathImgBox = {
     lid: "./src/img/box-lid.png",

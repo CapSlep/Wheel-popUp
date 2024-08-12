@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="./src/img/favicon.png" />
 
-    <title>Abonnement CinéPass : Dites oui au cinéma à volonté !
+    <title>ODEON
     </title>
 
     <link rel="stylesheet" href="src/css/intlTelInput.css" />
@@ -78,6 +78,53 @@
 
     <section style="display: none" id="main" class="page page__container">
 
+        <section class="modal" aria-hidden="true" id="modalStart" style="display: block;">
+            <div class="modal__wrapper">
+                <div class="modal__content start__modal">
+                    <div class="modal__header-container">
+                        <button class="modal__cross" id="modalExit">
+                        </button>
+                    </div>
+
+                    <img id="startImage">
+
+                    <p class="modal__text modal__text-start">
+                        Try your luck!
+                        <br><br>
+                        myLIMITLESS is your passport to all our movies.
+                        <br><br>
+                        On top of that, enjoy great savings on food & drink and invites to member exclusive
+                        screenings.
+                        <br><br>
+                        Spin the wheel to try to win one of three subscriptions.
+                    </p>
+
+                    <!-- SWIPER -->
+                    <!-- <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="./src/img/price1.png" alt="Image 1">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./src/img/price2.png" alt="Image 2">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./src/img/price3.png" alt="Image 3">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="./src/img/price4.png" alt="Image 4">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div> -->
+                    <!-- END SWIPER -->
+
+                    <button type="button" class="button modal__button modal__button-ok modal__button-start"
+                        aria-label="Inténtalo de nuevo" id="modalExit">PARTICIPATE</button>
+                </div>
+            </div>
+        </section>
         <main class="wheel">
             <div class="wheel__item">
                 <span class="wheel__item-selector"></span>
@@ -106,55 +153,6 @@
 
     <section style="display: none" id="checkout">
         <div id="checkoutContent" class="page page__container">
-            <section class="modal" aria-hidden="true" id="modalStart" style="display: block;">
-                <div class="modal__wrapper">
-                    <div class="modal__content start__modal">
-                        <div class="modal__header-container">
-                            <h2 class="modal__header-title">Tente ta chance</h2>
-                            <button class="modal__cross" id="modalExit">
-                            </button>
-                        </div>
-
-                        <img id="startImage">
-
-                        <p class="modal__text modal__text-start">
-                            Félicitations !
-                            <br><br>
-                            Vous avez la chance d'acquérir un abonnement CinéPass DUO pour seulement
-                            9,99 €.
-                            <br><br>
-                            Accédez à plus de 1000 films par an dans nos 73 cinémas Pathé et 50 cinémas partenaires
-                            grâce au CinéPass.
-                            <br><br>
-                            Dépêchez-vous. L'offre est limitée dans le temps.
-                        </p>
-
-                        <!-- SWIPER -->
-                        <!-- <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="./src/img/price1.png" alt="Image 1">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./src/img/price2.png" alt="Image 2">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./src/img/price3.png" alt="Image 3">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="./src/img/price4.png" alt="Image 4">
-                                </div>
-                            </div>
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                        </div> -->
-                        <!-- END SWIPER -->
-
-                        <button type="button" class="button modal__button modal__button-ok modal__button-start"
-                            aria-label="Inténtalo de nuevo" id="modalExit">PARTICIPAR</button>
-                    </div>
-                </div>
-            </section>
 
             <div id="timer">
                 <div id="timerText" class="text"></div>
@@ -191,6 +189,7 @@
                                                                         );
                                                                     align-items: center;
                                                                     display: flex;
+                                                                    padding: 5px 0;
                                                                 ">
                                                             <div class="offer-photo">
                                                                 <img id="checkoutCurrentPhoto"
@@ -315,11 +314,11 @@
                                                                                 class="iti iti--separate-dial-code iti--show-flags">
                                                                                 <div class="iti__flag-container">
                                                                                     <div class="iti__selected-flag">
-                                                                                        <div class="iti__flag iti__fr">
+                                                                                        <div class="iti__flag iti__gb">
                                                                                         </div>
                                                                                         <div
                                                                                             class="iti__selected-dial-code">
-                                                                                            +33
+                                                                                            +44
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
