@@ -520,13 +520,13 @@ setTimeout(() => {
     // if (true) {
     openCheckout();
     checkoutInit();
-    notificationsInit();
     timerInit();
     ratingInit();
     reviewsInit();
   } else {
     openMain();
     modalStartInit();
+    notificationsInit();
     // mainInit();
 
     // questionsInit();
