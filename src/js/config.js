@@ -8,17 +8,17 @@ const landingUrl = baseHref + window.location.pathname;
 const imageBase = baseUrl ?? landingUrl;
 
 (function (exp) {
-  const countryCode = "gb";
-  const lang = "en-GB";
+  const countryCode = "pl";
+  const lang = "pl-PL";
   const locale = lang;
 
   const sizes = {
     enabled: false,
-    selectText: "Size: ",
+    selectText: "Rozmiar: ",
     arr: ["XS", "S", "M", "M/L", "L", "L/XL", "XL", "XXL"],
   };
 
-  // I FILL THIS INFO IN MAIN.JS
+  // WYPEŁNIAM TE INFORMACJE W MAIN.JS
   const mainProduct = {
     header: "",
     name: "",
@@ -26,230 +26,230 @@ const imageBase = baseUrl ?? landingUrl;
     newPrice: "",
     selectText: "",
     coupon: "",
-    timer: "This week, you can only order one product at a promotional price.",
+    timer: "W tym tygodniu możesz zamówić tylko jeden produkt w promocyjnej cenie.",
     text: `
-  Congratulations!<br><br>
-  You have participated in the Stanley promotion: you have the chance to purchase the STANLEY QUENCHER H2.0 thermos with an ice mold for only <b>£37</b>!
-  `,
+  Gratulacje!<br><br>
+  Wziąłeś udział w promocji Stanley: masz szansę zakupić termos STANLEY QUENCHER H2.0 z formą do lodu za jedyne <b>37 zł</b>!
+    `,
   };
 
   const notifications = [
     {
       user: "Manuel S*****",
-      location: "London, United Kingdom",
-      action: "I just received the jewelry for £9.99!",
-      timeago: "15 seconds ago",
+      location: "Warszawa, Polska",
+      action: "Właśnie otrzymałem biżuterię za 9,99 zł!",
+      timeago: "15 sekund temu",
     },
     {
       user: "Carlos B******",
-      location: "Manchester, United Kingdom",
-      action: "I just received the jewelry for £9.99!",
-      timeago: "25 seconds ago",
+      location: "Kraków, Polska",
+      action: "Właśnie otrzymałem biżuterię za 9,99 zł!",
+      timeago: "25 sekund temu",
     },
   ];
 
   const reviewsArr = [
     {
-      name: "Emma J.:",
-      time: "1 day ago",
-      header: "This is amazing!",
+      name: "Marta K.:",
+      time: "1 dzień temu",
+      header: "To jest niesamowite!",
       product: "26468781",
-      review: "Unbelievable value! I got the 6-month myLIMITLESS PLUS pass at 90% off. Now I can watch as many films as I want without worrying about the cost!",
+      review: "Abonament Unlimited to najlepsza inwestycja w moje kino. Dzięki zniżkom do 85% mogłam kupić 6-miesięczny karnet za naprawdę świetną cenę. Polecam!",
     },
     {
-      name: "Liam S.:",
-      time: "2 days ago",
-      header: "Fantastic! I'm speechless.",
+      name: "Janek P.:",
+      time: "2 dni temu",
+      header: "Fantastyczne! Brak mi słów.",
       product: "26468783",
-      review: "The 3-month myLIMITLESS deal is amazing. With such a huge discount, it's practically free cinema for the entire summer. Highly recommend!",
+      review: "Kino z abonamentem Unlimited to czysta przyjemność. Zniżki na 6 miesięcy są rewelacyjne, a dostęp do wszystkich seansów to ogromna zaleta. Nie mogę się nacieszyć!",
     },
     {
-      name: "Chloe R.:",
-      time: "2 days ago",
-      header: "Simply great.",
+      name: "Anna S.:",
+      time: "2 dni temu",
+      header: "Po prostu świetne.",
       product: "26468784",
-      review: "Just grabbed the myLIMITLESS pass for half a year at a fraction of the price. Perfect timing for all the blockbuster releases!",
+      review: "Zniżka do 85% na karnet 6-miesięczny? Takie oferty są nie do przebicia! Dzięki Unlimited mogę chodzić do kina kiedy tylko chcę. Super!",
     },
     {
-      name: "Sophia M.:",
-      time: "4 days ago",
-      header: "I love it",
+      name: "Krzysztof M.:",
+      time: "4 dni temu",
+      header: "Uwielbiam to",
       product: "26468781",
-      review: "I never thought I'd get such a great deal on the myLIMITLESS PLUS pass. Six months of unlimited movies for just a few quid – incredible!",
+      review: "Kupując abonament Unlimited z 85% zniżką, zaoszczędziłem sporo pieniędzy. Teraz mam pełen dostęp do filmów w Cinema City i innych kinach partnerskich. Zdecydowanie warto!",
     },
     {
-      name: "James T.:",
-      time: "7 days ago",
-      header: "Wow, I love this product!",
+      name: "Ewa R.:",
+      time: "7 dni temu",
+      header: "Wow, uwielbiam ten produkt!",
       product: "26468782",
-      review: "Best deal ever! 90% off the myLIMITLESS subscription means more movies and more savings. Couldn't be happier with this offer.",
+      review: "Oferta 6-miesięcznego abonamentu Unlimited z tak dużą zniżką to prawdziwa okazja. Cieszę się, że mogę oglądać filmy bez ograniczeń. Gorąco polecam wszystkim kinomaniakom!",
     },
   ];
 
   const reviews = {
     reviews: reviewsArr,
-    rr: "REVIEWS AND RATINGS",
+    rr: "RECENZJE I OCENY",
     percent: "99%",
-    rec: "Comments on this promotion",
+    rec: "Komentarze na temat tej promocji",
   };
 
   const questions = {
-    _of: "Question {1} of {2}: ",
+    _of: "Pytanie {1} z {2}: ",
     arr: [
       {
-        q: "Have you ever ordered McDonald's products?",
+        q: "Czy kiedykolwiek zamawiałeś produkty McDonald's?",
         a: [
-          "Yes, I order often",
-          "Yes, I order rarely",
-          "I've never ordered",
+          "Tak, zamawiam często",
+          "Tak, zamawiam rzadko",
+          "Nigdy nie zamawiałem",
         ],
       },
       {
-        q: "Should McDonald's continue this type of advertising campaigns?",
-        a: ["Yes, absolutely!", "Yes, but change the promotional menu", "No"],
+        q: "Czy McDonald's powinien kontynuować tego typu kampanie reklamowe?",
+        a: ["Tak, absolutnie!", "Tak, ale zmień menu promocyjne", "Nie"],
       },
       {
-        q: "Would you recommend our products to your friends?",
-        a: ["Yes", "No"],
+        q: "Czy poleciłbyś nasze produkty swoim znajomym?",
+        a: ["Tak", "Nie"],
       },
     ],
   };
 
   const check = {
-    title: "Your answer is being reviewed",
+    title: "Twoja odpowiedź jest weryfikowana",
     arr: [
-      "You answered question 3 out of 3",
-      "Your IP address shows no previous orders",
-      "Your answer has been verified",
+      "Odpowiedziałeś na pytanie 3 z 3",
+      "Twój adres IP nie pokazuje wcześniejszych zamówień",
+      "Twoja odpowiedź została zweryfikowana",
     ],
   };
 
   const modals = {
     welcome: {
       texts: {
-        header: "Thank you for participating in the survey!",
-        button: "Try your luck",
+        header: "Dziękujemy za udział w ankiecie!",
+        button: "Spróbuj szczęścia",
         text: `
-<center>
-    To receive the McDonald's promotional menu, you need to choose the right gift box.
-    <br><br>
-    You have 3 attempts, good luck!
-</center>
-            `,
+  <center>
+      Aby otrzymać promocyjne menu McDonald's, musisz wybrać właściwe pudełko z prezentami.
+      <br><br>
+      Masz 3 próby, powodzenia!
+  </center>
+              `,
       },
     },
     first: {
       texts: {
-        header: "Oh no...",
-        button: "Try again",
+        header: "Och, nie...",
+        button: "Spróbuj ponownie",
         text: `
-<center>
-    Unfortunately, this gift is empty. You have two more attempts, good luck!
-</center>
-            `,
+  <center>
+      Niestety, ten prezent jest pusty. Masz jeszcze dwie próby, powodzenia!
+  </center>
+              `,
       },
     },
     win: {
       texts: {
         header: "",
-        button: "Place Order",
+        button: "Złóż zamówienie",
         text: `
-<center>
-    <p style="color: #ffffff"></p>
-    <br>
-    Click on the "Place Order" button, fill out the form, and pay for your order.
-    <br>
-    <br>
-    Within 3–5 days, you will receive a package with your subscription card and instructions.
-</center>
-            `,
+  <center>
+      <p style="color: #ffffff"></p>
+      <br>
+      Kliknij przycisk „Złóż zamówienie”, wypełnij formularz i zapłać za zamówienie.
+      <br>
+      <br>
+      W ciągu 3–5 dni otrzymasz przesyłkę z kartą subskrypcji i instrukcjami.
+  </center>
+              `,
       },
     },
   };
 
   const cartSteps = {
     personal: {
-      title: "Personal Information",
+      title: "Informacje osobiste",
       fields: {
         name: {
           enabled: true,
-          field: "First Name",
+          field: "Imię",
         },
         family: {
           enabled: true,
-          field: "Last Name",
+          field: "Nazwisko",
         },
         phone: {
           enabled: true,
-          field: "Phone Number",
+          field: "Numer telefonu",
         },
         email: {
           enabled: true,
-          field: "Email Address",
+          field: "Adres e-mail",
         },
       },
     },
     delivery: {
-      title: "Delivery",
+      title: "Dostawa",
       fields: {
         city: {
           enabled: true,
-          field: "City",
+          field: "Miasto",
         },
         address: {
           enabled: true,
-          field: "Delivery Address",
+          field: "Adres dostawy",
         },
         zip: {
           enabled: true,
-          field: "Postal Code",
+          field: "Kod pocztowy",
         },
       },
     },
     payment: {
-      title: "Payment Methods",
-      creditCard: "Online payment by credit card",
+      title: "Metody płatności",
+      creditCard: "Płatność online kartą kredytową",
     },
   };
 
   const cart = {
     steps: cartSteps,
     main: {
-      title: "Order Details",
-      oldPrice: "£96.00",
-      newPrice: "£9.99",
-      size: "Size",
+      title: "Szczegóły zamówienia",
+      oldPrice: "304.99 zł",
+      newPrice: "43.99 zł",
+      size: "Rozmiar",
       subTotal: {
-        title: "Subtotal",
-        amount: "£9.99",
+        title: "Suma częściowa",
+        amount: "43.99 zł",
       },
       deliveryTime: {
-        title: "Delivery Time",
-        amount: "3 days",
+        title: "Czas dostawy",
+        amount: "3-5 dni",
       },
       delivery: {
-        title: "Delivery",
-        amount: "£0.00",
+        title: "Dostawa",
+        amount: "0,00 zł",
       },
       total: {
-        title: "Total",
-        amount: "£9.99",
+        title: "Suma",
+        amount: "43.99 zł",
       },
-      checkoutButton: "Pay your order",
+      checkoutButton: "Zapłać za zamówienie",
     },
   };
 
   const products = [
     {
       id: "26468781",
-      name: "MYLIMITLESS MEMBERSHIP - YOUR TICKET TO INFINITE CINEMA",
+      name: "CINEMA CITY UNLIMITED - Dostęp do 35 kin - Abonament na 6 miesięcy",
       miniImg: "./src/img/price.png",
       images: ["./src/img/price.png"],
     }
   ];
 
   const footer = {
-    cr: "© 2024, UEFA and Fanatics, Inc.",
+    cr: "© 2024, UEFA i Fanatics, Inc.",
   };
 
 
